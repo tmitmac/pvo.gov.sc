@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Property Valuation Office | Square Country Government</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #eeeeee;
+        color: #222;
+        font-size: 14px;
+    }
+
+    a {
+        color: #064b8f;
+    }
+
+    /* GOV BAR */
+
+    .govbar {
+        background: #102a43;
+        color: white;
+        font-size: 12px;
+    }
+
+    .govbar-inner {
+        max-width: 1180px;
+        margin: auto;
+        padding: 7px 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* HEADER */
+
+    header {
+        background: white;
+        border-bottom: 1px solid #c7c7c7;
+    }
+
+    .header-inner {
+        max-width: 1180px;
+        margin: auto;
+        padding: 20px 18px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .crest {
+        width: 65px;
+        height: 65px;
+        background: #123f6b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        border: 4px solid #d2a84a;
+    }
+
+    .agency-small {
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+    }
+
+    h1 {
+        margin: 0;
+        color: #123f6b;
+        font-size: 29px;
+    }
+
+    .tagline {
+        color: #555;
+        margin-top: 5px;
+    }
+
+    /* NAV */
+
+    nav {
+        background: #123f6b;
+    }
+
+    .nav-inner {
+        max-width: 1180px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 13px 19px;
+        display: block;
+        border-right: 1px solid rgba(255,255,255,.18);
+        font-size: 13px;
+    }
+
+    nav a:hover,
+    nav a.active {
+        background: #092c4c;
+    }
+
+    /* MAIN */
+
+    .container {
+        max-width: 1180px;
+        margin: auto;
+        padding: 22px 18px 50px;
+    }
+
+    .breadcrumbs {
+        font-size: 12px;
+        margin-bottom: 18px;
+    }
+
+    /* SEARCH */
+
+    .search-panel {
+        background: #dfe8ef;
+        border: 1px solid #bccbd6;
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    .search-panel h2 {
+        margin: 0 0 8px;
+        color: #123f6b;
+        font-size: 23px;
+    }
+
+    .search-panel p {
+        margin: 0 0 18px;
+    }
+
+    .search-row {
+        display: flex;
+        gap: 8px;
+    }
+
+    .search-row input {
+        flex: 1;
+        padding: 13px;
+        border: 1px solid #999;
+        font-size: 15px;
+    }
+
+    .search-row button {
+        background: #d18b00;
+        color: white;
+        border: 0;
+        padding: 0 25px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .search-row button:hover {
+        background: #b77600;
+    }
+
+    .search-note {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #555;
+    }
+
+    /* NOTICE */
+
+    .notice {
+        background: #fff9dc;
+        border-left: 5px solid #d49a00;
+        padding: 15px 18px;
+        margin-bottom: 25px;
+    }
+
+    .notice strong {
+        color: #684c00;
+    }
+
+    /* GRID */
+
+    .grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 22px;
+    }
+
+    .box {
+        background: white;
+        border: 1px solid #c8c8c8;
+        margin-bottom: 22px;
+    }
+
+    .box-title {
+        background: #123f6b;
+        color: white;
+        padding: 11px 15px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .box-content {
+        padding: 18px;
+    }
+
+    /* SERVICES */
+
+    .services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .service {
+        border: 1px solid #ccc;
+        padding: 17px;
+        background: #fafafa;
+    }
+
+    .service:hover {
+        background: #f0f5f9;
+    }
+
+    .service h3 {
+        margin: 0 0 7px;
+        font-size: 16px;
+    }
+
+    .service p {
+        margin: 0;
+        color: #555;
+        line-height: 1.45;
+    }
+
+    /* PROPERTY RESULT */
+
+    .property-search {
+        margin-top: 15px;
+        display: none;
+        border-top: 1px solid #ccc;
+        padding-top: 18px;
+    }
+
+    .property-result {
+        border: 1px solid #bbb;
+        background: white;
+    }
+
+    .result-header {
+        background: #f1f1f1;
+        padding: 14px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .result-header strong {
+        font-size: 18px;
+        color: #123f6b;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 11px 13px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    td:first-child {
+        width: 42%;
+        font-weight: bold;
+        background: #f7f7f7;
+    }
+
+    /* LINKS */
+
+    .link-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .link-list li {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .link-list li:last-child {
+        border-bottom: none;
+    }
+
+    .link-list a {
+        display: block;
+        padding: 12px 4px;
+    }
+
+    /* STATS */
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .stat {
+        background: #f3f3f3;
+        border: 1px solid #d2d2d2;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .stat-number {
+        color: #123f6b;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .stat-label {
+        font-size: 11px;
+        color: #555;
+        margin-top: 3px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background: #333;
+        color: #ddd;
+        margin-top: 30px;
+    }
+
+    .footer-inner {
+        max-width: 1180px;
+        margin: auto;
+        padding: 30px 18px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 35px;
+    }
+
+    footer h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+    footer a {
+        color: #ddd;
+        display: block;
+        margin: 7px 0;
+    }
+
+    .copyright {
+        border-top: 1px solid #555;
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 11px;
+        color: #aaa;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 750px) {
+
+        .govbar-inner {
+            display: block;
+        }
+
+        .govbar-inner div:last-child {
+            margin-top: 5px;
+        }
+
+        .header-inner {
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        nav a {
+            flex: 1 1 50%;
+            text-align: center;
+        }
+
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .services {
+            grid-template-columns: 1fr;
+        }
+
+        .search-row {
+            display: block;
+        }
+
+        .search-row button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+
+<!-- GOVERNMENT BAR -->
+
+<div class="govbar">
+    <div class="govbar-inner">
+
+        <div>
+            <strong>SQUARE COUNTRY GOVERNMENT</strong>
+        </div>
+
+        <div>
+            Government information &nbsp; | &nbsp;
+            Accessibility &nbsp; | &nbsp;
+            Contact
+        </div>
+
+    </div>
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="crest">
+            PV
+        </div>
+
+        <div>
+
+            <div class="agency-small">
+                Square Country Government
+            </div>
+
+            <h1>Property Valuation Office</h1>
+
+            <div class="tagline">
+                Property information, valuation and land data
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="#" class="active">Home</a>
+        <a href="#">Property Search</a>
+        <a href="#">Valuation Information</a>
+        <a href="#">Forms &amp; Applications</a>
+        <a href="#">Publications</a>
+        <a href="#">About the Office</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <div class="breadcrumbs">
+        You are here: <strong>Home</strong>
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-panel">
+
+        <h2>Search Property Valuation Information</h2>
+
+        <p>
+            Search the Square Country Property Valuation Register by
+            property address, valuation reference or legal description.
+        </p>
+
+        <div class="search-row">
+
+            <input
+                type="text"
+                id="propertySearch"
+                placeholder="Enter a property address or valuation reference..."
+            >
+
+            <button onclick="searchProperty()">
+                SEARCH
+            </button>
+
+        </div>
+
+        <div class="search-note">
+            Example: 14 Government Street, Masterton
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div class="property-search" id="result">
+
+            <div class="property-result">
+
+                <div class="result-header">
+                    <strong>Property valuation record</strong>
+                </div>
+
+                <table>
+
+                    <tr>
+                        <td>Property address</td>
+                        <td id="resultAddress"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Valuation reference</td>
+                        <td>SC-MAS-004821</td>
+                    </tr>
+
+                    <tr>
+                        <td>Legal description</td>
+                        <td>Lot 2 DP 18492</td>
+                    </tr>
+
+                    <tr>
+                        <td>Land area</td>
+                        <td>642 m²</td>
+                    </tr>
+
+                    <tr>
+                        <td>Land value</td>
+                        <td>$485,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Capital value</td>
+                        <td>$1,185,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Value of improvements</td>
+                        <td>$700,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Valuation date</td>
+                        <td>1 July 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Next scheduled review</td>
+                        <td>2029</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>2026 valuation information</strong><br>
+
+        The 2026 District Valuation Roll is now available for public
+        inspection. Property owners may apply for a review of their
+        valuation where they believe information held by the Office is
+        incorrect.
+
+        <a href="#">Find out about valuation reviews →</a>
+
+    </div>
+
+
+    <!-- CONTENT GRID -->
+
+    <div class="grid">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+
+            <!-- SERVICES -->
+
+            <section class="box">
+
+                <div class="box-title">
+                    Property services
+                </div>
+
+                <div class="box-content">
+
+                    <div class="services">
+
+
+                        <div class="service">
+
+                            <h3>
+                                <a href="#">Search property information</a>
+                            </h3>
+
+                            <p>
+                                Search valuation records and publicly
+                                available property information.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service">
+
+                            <h3>
+                                <a href="#">Request a valuation review</a>
+                            </h3>
+
+                            <p>
+                                Request a review where information used
+                                in a valuation may be incorrect.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service">
+
+                            <h3>
+                                <a href="#">Order property information</a>
+                            </h3>
+
+                            <p>
+                                Request certified property and valuation
+                                information for official purposes.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service">
+
+                            <h3>
+                                <a href="#">Update property details</a>
+                            </h3>
+
+                            <p>
+                                Notify the Office of changes to buildings,
+                                land use or property characteristics.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service">
+
+                            <h3>
+                                <a href="#">Valuation notices</a>
+                            </h3>
+
+                            <p>
+                                View information about valuation notices,
+                                dates and review periods.
+                            </p>
+
+                        </div>
+
+
+                        <div class="service">
+
+                            <h3>
+                                <a href="#">Forms and applications</a>
+                            </h3>
+
+                            <p>
+                                Download forms for valuation services,
+                                reviews and information requests.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ABOUT -->
+
+            <section class="box">
+
+                <div class="box-title">
+                    About property valuations
+                </div>
+
+                <div class="box-content">
+
+                    <p>
+                        The Property Valuation Office maintains the
+                        Square Country valuation system and establishes
+                        standards for the preparation and maintenance of
+                        valuation information.
+                    </p>
+
+                    <p>
+                        Valuation information supports local government
+                        rating systems, property administration,
+                        government planning and public access to
+                        property information.
+                    </p>
+
+                    <p>
+                        A valuation is a snapshot of the assessed value
+                        of a property at a specified valuation date.
+                        It should not be treated as a guaranteed sale
+                        price or as a substitute for an independent
+                        professional valuation.
+                    </p>
+
+                    <a href="#">
+                        Learn more about how valuations work →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="box">
+
+                <div class="box-title">
+                    Property valuation system
+                </div>
+
+                <div class="box-content">
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <div class="stat-number">1.84m</div>
+                            <div class="stat-label">
+                                properties recorded
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">26</div>
+                            <div class="stat-label">
+                                valuation districts
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">3 yrs</div>
+                            <div class="stat-label">
+                                standard review cycle
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside>
+
+
+            <!-- IMPORTANT -->
+
+            <section class="box">
+
+                <div class="box-title">
+                    Important information
+                </div>
+
+                <div class="box-content">
+
+                    <ul class="link-list">
+
+                        <li>
+                            <a href="#">
+                                Understanding your valuation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Valuation dates
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Objecting to a valuation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Property information privacy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Registered valuers
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK LINKS -->
+
+            <section class="box">
+
+                <div class="box-title">
+                    Quick links
+                </div>
+
+                <div class="box-content">
+
+                    <ul class="link-list">
+
+                        <li>
+                            <a href="#">
+                                Property Valuation Register
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                District Valuation Rolls
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Valuation standards
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Annual reports
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Fees and charges
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- NEWS -->
+
+            <section class="box">
+
+                <div class="box-title">
+                    Latest updates
+                </div>
+
+                <div class="box-content">
+
+                    <p>
+                        <strong>
+                            22 September 2026
+                        </strong><br>
+
+                        2026 valuation review period now open.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <strong>
+                            8 September 2026
+                        </strong><br>
+
+                        Updated valuation standards published.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <strong>
+                            26 August 2026
+                        </strong><br>
+
+                        New Property Valuation Register released.
+                    </p>
+
+                    <a href="#">
+                        All news and notices →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </aside>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>Property Valuation Office</h3>
+
+                <p>
+                    Square Country Government
+                </p>
+
+                <p>
+                    The Property Valuation Office provides valuation
+                    information and supports the administration of
+                    Square Country's property valuation system.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Information</h3>
+
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+                <a href="#">Publications</a>
+                <a href="#">Careers</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Website</h3>
+
+                <a href="#">Privacy</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Copyright</a>
+                <a href="#">Site map</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Property Valuation Office, Square Country Government.
+
+            <br><br>
+
+            This website is a fictional representation of a Square Country
+            Government institution created for entertainment and
+            world-building purposes. Square Country is fictional and is
+            not a real government, country, institution or organisation.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function searchProperty() {
+
+    const input = document.getElementById("propertySearch");
+    const result = document.getElementById("result");
+    const address = document.getElementById("resultAddress");
+
+    let value = input.value.trim();
+
+    if (value === "") {
+
+        alert("Please enter a property address or valuation reference.");
+
+        return;
+    }
+
+    address.textContent = value;
+
+    result.style.display = "block";
+
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+
+}
+
+document
+    .getElementById("propertySearch")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            searchProperty();
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
